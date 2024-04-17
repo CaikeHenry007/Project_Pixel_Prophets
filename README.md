@@ -4,6 +4,9 @@ Nós somos o Pixel Prophets. Um grupo de estudantes cursando Desenvolvimento de 
 
 
 Project Owner: Caike Henry;
+-
 Developer: Guilherme Veiga;
+-
 Developer: Paulo Cesar;
+-
 Developer: Wellington Oliveira;
