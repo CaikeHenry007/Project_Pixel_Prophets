@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Text, View, Modal } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 
 import Styles from "../styles/StyleSheet"; // Importacao do Styles
 import Txt from "../components/TextProps"; // Importacao do Component Text
