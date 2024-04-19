@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Text, View, Alert, Modal } from "react-native";
-import styles from "../styles/StyleSheet";
+import Styles from "../styles/StyleSheet";
 import * as LocalAuthentication from "expo-local-authentication";
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={Styles.container}>
       <Text style={Styles.textos}>
         Usuário conectado: {isAuthenticated ? "true" : "false"}
       </Text>
