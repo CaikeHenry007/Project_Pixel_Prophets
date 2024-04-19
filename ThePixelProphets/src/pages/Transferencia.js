@@ -1,15 +1,63 @@
 import React, { useEffect, useState } from "react";
-import { Button, Text, View, Modal } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-
-
-import Styles from "../styles/StyleSheet"; // Importacao do Styles
-import Txt from "../components/TextProps"; // Importacao do Component Text
-import ImageProps from "../components/ImageProps"; // Importacao do Componente Imagem
-import InputProps from "../components/TextInputProps";
+import { Button, View, Alert } from "react-native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
+import Txt from "../components/TextProps";
 import Btn from "../components/ButtonProps";
+import ImageProps from "../components/ImageProps";
+import InputProps from "../components/TextInputProps";
 
-export default function Transferencia() {
+import Styles from "../styles/StyleSheet";
+import * as LocalAuthentication from "expo-local-authentication";
+
+export default function Home() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [visible, setVisible] = useState(false); // Define visible state
+  const navigation = useNavigation();
+  const isFocused = useIsFocused(); // Corrected to be a call without an argument
+
+  async function verifyAvailableAuthentication() {
+    const compatible = await LocalAuthentication.hasHardwareAsync();
+    console.log(compatible);
+
+    const types = await LocalAuthentication.supportedAuthenticationTypesAsync();
+    console.log(
+      types.map((type) => LocalAuthentication.AuthenticationType[type])
+    );
+  }
+
+  async function handleAuthentication() {
+    const isBiometricEnrolled = await LocalAuthentication.isEnrolledAsync();
+    console.log(isBiometricEnrolled);
+  
+    if (!isBiometricEnrolled) {
+      return Alert.alert(
+        "Login",
+        "Não foi encontrada a biometria. Por favor, cadastre uma no dispositivo.",
+        [{ text: "OK", onPress: () => navigation.navigate("Home") }]
+      );
+    }
+  
+    const auth = await LocalAuthentication.authenticateAsync({
+      promptMessage: "Coloque sua digital",
+      fallbackLabel: "Erro, biometria incorreta",
+    });
+  
+    if (auth.success) {
+      setIsAuthenticated(true);
+    }
+    setVisible(auth.success);
+  }
+
+  useEffect(() => {
+    verifyAvailableAuthentication();
+    handleAuthentication();
+  }, [isFocused]);
+
+  function handleLogout() {
+    setIsAuthenticated(false);
+    navigation.navigate("Home");
+  }
+  
   return (
     <View style={Styles.container}>
       <ImageProps
@@ -28,6 +76,7 @@ export default function Transferencia() {
       <Btn OnPress={() => alert("Apertou o botão!")} TouchStyle={Styles.btn}>
         <Txt Texto="Continuar para revisão" TextStyle={Styles.textobtn} />
       </Btn>
+      <Button title="Sair" onPress={handleLogout} />
     </View>
   );
 }

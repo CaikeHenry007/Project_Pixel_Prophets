@@ -17,6 +17,21 @@ const Styles = StyleSheet.create({
     width: 300,
     height: 300,
   },
+
+  firstButtons: {
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 18,
+  },
+
+  frtButtons: {
+    width: 162,
+    height: 45,
+    borderRadius: 10,
+    justifyContent: "center",
+    
+  },
+
   caixauser: {
     width: "25%",
     height: 50,
@@ -54,9 +69,15 @@ const Styles = StyleSheet.create({
     fontStyle: "italic",
     color: "#F0EDE9",
   },
-  imagesicones:{
+  imagesicones: {
     width: 25,
     height: 25,
+  },
+
+  firstFooter:{
+    position:"absolute",
+    flexDirection:"row",
+    alignItems:"center",
   },
 });
 

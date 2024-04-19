@@ -1,13 +1,14 @@
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 export default function Btn({
   children,
   TouchStyle,
-  OnPress,
+  OnPress, 
+  letras
 }) {
   return (
     <TouchableOpacity onPress={OnPress} style={TouchStyle}>
-      {children}
+      <Text style={letras}>{children}</Text>
     </TouchableOpacity>
   );
 }
