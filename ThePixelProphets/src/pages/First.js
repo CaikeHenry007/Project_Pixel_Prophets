@@ -20,7 +20,7 @@ export default function First() {
       <View>
         <ImageBackground
           source={require("../assets/images/Fundo1.png")}
-          style={{ width: "100%", height: "100%", marginTop: "7%" }}
+          style={{ width: "100%", height: "100%", marginTop: "7%"}}
         >
           <View style={Styles.firstFooter}>
             <Btn
