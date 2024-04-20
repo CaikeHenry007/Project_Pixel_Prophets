@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, View, Alert } from "react-native";
-import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { useNavigation, } from "@react-navigation/native";
 import Txt from "../components/TextProps";
 import Btn from "../components/ButtonProps";
 import ImageProps from "../components/ImageProps";
@@ -13,7 +13,6 @@ export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [visible, setVisible] = useState(false); // Define visible state
   const navigation = useNavigation();
-  const isFocused = useIsFocused(); // Corrected to be a call without an argument
 
   async function verifyAvailableAuthentication() {
     const compatible = await LocalAuthentication.hasHardwareAsync();
@@ -32,8 +31,8 @@ export default function Home() {
     if (!isBiometricEnrolled) {
       return Alert.alert(
         "Login",
-        "Não foi encontrada a biometria. Por favor, cadastre uma no dispositivo.",
-        [{ text: "OK", onPress: () => navigation.navigate("Home") }]
+        "Não foi encontrada a biometria. Insira a senha da sua conta",
+        [{ text: "OK", onPress: () => navigation.navigate("TransferenciaConfirmacao") }]
       );
     }
   
@@ -51,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     verifyAvailableAuthentication();
     handleAuthentication();
-  }, [isFocused]);
+  }, []);
 
   function handleLogout() {
     setIsAuthenticated(false);

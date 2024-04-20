@@ -2,15 +2,13 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Styles from "./src/styles/StyleSheet"; // Importação do Style
-
 import Login from "./src/pages/Login"; // Importação da página Login
-
-import First from "./src/pages/First"; // Importacao da Pagina First
 
 import Home from "./src/pages/Home"; // Importacao da Pagina Home
 
 import Transferencia from "./src/pages/Transferencia"; // Importacao da Pagina Transferencia
+
+import TransferenciaConfirmacao from "./src/partials/Transferencia";
 
 import Perfil from "./src/pages/Perfil"; // Importacao da Pagina Perfil
 
@@ -20,9 +18,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="First"
-          component={First}
+      <Stack.Screen
+          name="Login"
+          component={Login}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -35,10 +33,9 @@ export default function App() {
           component={Transferencia}
           options={{ headerShown: false }}
         />
-
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="TransferenciaConfirmacao"
+          component={TransferenciaConfirmacao}
           options={{ headerShown: false }}
         />
         <Stack.Screen

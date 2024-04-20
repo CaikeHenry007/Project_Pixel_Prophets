@@ -1,35 +1,63 @@
-import React, { useEffect, useState } from "react";
-import { Button, Text, View, Modal } from "react-native";
+import React, {useState, useEffect} from "react";
+import { View, ImageBackground, Modal } from "react-native";
+import { StatusBar } from "expo-status-bar";
+
 import { useNavigation } from "@react-navigation/native";
+import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
 
-
-import Styles from "../styles/StyleSheet"; // Importacao do Styles
-import Txt from "../components/TextProps"; // Importacao do Component Text
-import ImageProps from "../components/ImageProps"; // Importacao do Componente Imagem
-import InputProps from "../components/TextInputProps"; // Importação do Componente Text Input
+import Btn from "../components/ButtonProps";
+import Styles from "../styles/StyleSheet";
+import ImageProps from "../components/ImageProps";
+import Txt from "../components/TextProps";
+import InputProps from "../components/TextInputProps";
+import LoginModal from "../partials/Login";
+import CadastroModal from "../partials/Cadastro";
 
 export default function Login() {
+
+  const [visibleA, setVisibleA] = useState(false);
+
+  const [visibleB, setVisibleB] = useState(false);
+
+  const navigation = useNavigation();
+
+  const fontes = useFonts({
+    Prompt_400Regular,
+  });
+
   return (
-    <View style={Styles.container}>
-      <ImageProps
-        source={require("../assets/images/LogoPB.png")}
-        style={Styles.ImgLogo}
-      />
-      <Txt Texto="Faça login" TextStyle={Styles.textos} />
-      <View style={Styles.caixas}>
-        <ImageProps
-          style={Styles.imagesicones}
-          source={require("../assets/images/People.jpg")}
-        />
-        <InputProps InputStyle={Styles.caixauser} Placeholder="Usuário" />
-      </View>
-      <View style={Styles.caixas}>
-        <ImageProps
-          style={Styles.imagesicones}
-          source={require("../assets/images/Cadeado.png")}
-        />
-        <InputProps InputStyle={Styles.caixasenha} Placeholder="Senha" />
-      </View>
+    <View style={{flex: 1,}}>
+        <ImageBackground
+          source={require("../assets/images/Fundo1.png")}
+          style={{flex: 1,}}
+        >
+          <View style={Styles.firstFooter}>
+            <Btn
+              TouchStyle={[
+                Styles.frtButtons,
+                { backgroundColor: "#F5E2CF", marginRight: 10 },
+              ]}
+              letras={[Styles.firstButtons, { color: "#2F2C79" }]}
+              children="Entrar"
+              OnPress={() => setVisibleA(true)}
+            />
+
+            <Btn
+              TouchStyle={[
+                Styles.frtButtons,
+                { backgroundColor: "#2F2C79", marginLeft: 10 },
+              ]}
+              letras={[Styles.firstButtons, { color: "#F5E2CF" }]}
+              children="Criar conta"
+              OnPress={() => setVisibleB(true)}
+            />
+          </View>
+          <LoginModal visible={visibleA} OnPress={() => navigation.navigate("Transferencia")} />
+          <CadastroModal visible={visibleB} OnPress={() => navigation.navigate("Transferencia")} />
+        </ImageBackground>
+      
+      <StatusBar hidden={true} backgroundColor="#F0EDE9" />
     </View>
   );
 }
+

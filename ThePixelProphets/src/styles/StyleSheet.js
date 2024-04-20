@@ -29,7 +29,6 @@ const Styles = StyleSheet.create({
     height: 45,
     borderRadius: 10,
     justifyContent: "center",
-    
   },
 
   caixauser: {
@@ -74,16 +73,15 @@ const Styles = StyleSheet.create({
     height: 25,
   },
 
-  firstFooter:{
-    position: "absolute",
+  firstFooter: {
     flexDirection: "row",
     backgroundColor: "#171A4A",
     borderRadius: 15,
-    marginTop: "170%",
     height: 130,
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: '100%'
   },
 });
 
