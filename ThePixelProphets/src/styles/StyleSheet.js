@@ -75,9 +75,15 @@ const Styles = StyleSheet.create({
   },
 
   firstFooter:{
-    position:"absolute",
-    flexDirection:"row",
-    alignItems:"center",
+    position: "absolute",
+    flexDirection: "row",
+    backgroundColor: "#171A4A",
+    borderRadius: 15,
+    marginTop: 680,
+    height: 150,
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 

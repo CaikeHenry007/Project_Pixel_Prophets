@@ -13,21 +13,21 @@ export default function First() {
       <StatusBar backgroundColor="#F0EDE9" style="auto" />
       <View>
         <ImageBackground
-          source={require("../assets/images/Fundo.png")}
+          source={require("../assets/images/Fundo1.png")}
           style={{ width: "100%", height: "100%", marginTop: "7%" }}
         >
           <View style={Styles.firstFooter} >
             
        
             <Btn
-              TouchStyle={[Styles.frtButtons, { backgroundColor:"#F5E2CF" }]}
+              TouchStyle={[Styles.frtButtons, { backgroundColor:"#F5E2CF", marginRight: 10 }]}
               letras={[Styles.firstButtons, { color:"#2F2C79", }]}
               children="Entrar"
               OnPress={() => navigation.navigate("Transferencia")}
             />
       
             <Btn
-              TouchStyle={[Styles.frtButtons, { backgroundColor:"#2F2C79" }]}
+              TouchStyle={[Styles.frtButtons, { backgroundColor:"#2F2C79", marginLeft: 10 }]}
               letras={[Styles.firstButtons, { color:"#F5E2CF", }]}
               children="Criar conta"
               OnPress={() => navigation.navigate("Transferencia")}
