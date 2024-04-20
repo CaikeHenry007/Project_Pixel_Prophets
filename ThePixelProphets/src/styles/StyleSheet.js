@@ -19,7 +19,7 @@ const Styles = StyleSheet.create({
   },
 
   firstButtons: {
-    fontWeight: "bold",
+    fontFamily: "Prompt_400Regular",
     textAlign: "center",
     fontSize: 18,
   },
@@ -79,7 +79,7 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#171A4A",
     borderRadius: 15,
-    marginTop: 680,
+    marginTop: "100%",
     height: 150,
     width: "100%",
     alignItems: "center",
