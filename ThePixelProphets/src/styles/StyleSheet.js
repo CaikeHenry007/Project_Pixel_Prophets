@@ -79,7 +79,7 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#171A4A",
     borderRadius: 15,
-    marginTop: "100%",
+    marginTop: "170%",
     height: 150,
     width: "100%",
     alignItems: "center",
