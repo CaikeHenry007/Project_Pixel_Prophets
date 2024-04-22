@@ -8,7 +8,7 @@ import Home from "./src/pages/Home"; // Importacao da Pagina Home
 
 import Transferencia from "./src/pages/Transferencia"; // Importacao da Pagina Transferencia
 
-import TransferenciaConfirmacao from "./src/partials/Transferencia";
+import { TransferenciaConfirmacao, TransferenciaConclusao } from "./src/partials/Transferencia";
 
 import Perfil from "./src/pages/Perfil"; // Importacao da Pagina Perfil
 
@@ -36,6 +36,11 @@ export default function App() {
         <Stack.Screen
           name="TransferenciaConfirmacao"
           component={TransferenciaConfirmacao}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TransferenciaConclusao"
+          component={TransferenciaConclusao}
           options={{ headerShown: false }}
         />
         <Stack.Screen

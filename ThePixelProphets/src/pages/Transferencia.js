@@ -5,13 +5,18 @@ import Txt from "../components/TextProps";
 import Btn from "../components/ButtonProps";
 import ImageProps from "../components/ImageProps";
 import InputProps from "../components/TextInputProps";
+import { TransferenciaConclusao } from "../partials/Transferencia";
 
 import Styles from "../styles/StyleSheet";
 import * as LocalAuthentication from "expo-local-authentication";
 
-export default function Home() {
+
+export default function Transferencia() {
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [visible, setVisible] = useState(false); // Define visible state
+  const [NumConta, setNumCont] = useState('');
+  const [ValTransfe, setValTransfe] = useState('');
   const navigation = useNavigation();
 
   async function verifyAvailableAuthentication() {
@@ -40,11 +45,6 @@ export default function Home() {
       promptMessage: "Coloque sua digital",
       fallbackLabel: "Erro, biometria incorreta",
     });
-  
-    if (auth.success) {
-      setIsAuthenticated(true);
-    }
-    setVisible(auth.success);
   }
 
   useEffect(() => {
@@ -66,16 +66,21 @@ export default function Home() {
       <Txt Texto="Faça uma Transferência" TextStyle={Styles.textos} />
       <InputProps
         InputStyle={Styles.caixauser}
-        Placeholder="Insira a chave pix"
+        Placeholder="Insira o nome da conta"
+        onChangeText={setNumCont}
+        TypeTeclado="numeric"
       />
       <InputProps
         InputStyle={Styles.caixasenha}
-        Placeholder="Insira um valor"
+        Placeholder="Insira o valor desejado"
+        onChangeText={setValTransfe}
+        TypeTeclado="numeric"
       />
-      <Btn OnPress={() => alert("Apertou o botão!")} TouchStyle={Styles.btn}>
+      <Btn OnPress={() => setVisible(true)} TouchStyle={Styles.btn}>
         <Txt Texto="Continuar para revisão" TextStyle={Styles.textobtn} />
       </Btn>
       <Button title="Sair" onPress={handleLogout} />
+      <TransferenciaConclusao visible={visible} NumeroConta={NumConta} ValorTransfe={ValTransfe} OnPress={() => navigation.navigate("Home")}/>
     </View>
   );
 }

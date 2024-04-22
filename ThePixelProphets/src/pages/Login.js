@@ -52,8 +52,8 @@ export default function Login() {
               OnPress={() => setVisibleB(true)}
             />
           </View>
-          <LoginModal visible={visibleA} OnPress={() => navigation.navigate("Transferencia")} />
-          <CadastroModal visible={visibleB} OnPress={() => navigation.navigate("Transferencia")} />
+          <LoginModal visible={visibleA} OnPress={() => navigation.navigate("Home")} />
+          <CadastroModal visible={visibleB} OnPress={() => setVisibleB(false)} />
         </ImageBackground>
       
       <StatusBar hidden={true} backgroundColor="#F0EDE9" />

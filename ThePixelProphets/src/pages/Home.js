@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <View style={Styles.container}>
           <Text>Bem vindo</Text>
+          <Text>Seu saldo é R$1000 </Text>
           <Button onPress={() => navigation.navigate('Transferencia')} title="Fazer transferencia"/>
     </View>
   );
