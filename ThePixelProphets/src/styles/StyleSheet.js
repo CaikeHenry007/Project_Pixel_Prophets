@@ -3,14 +3,18 @@ import { StyleSheet } from "react-native";
 const Styles = StyleSheet.create({
   container: {
     flex: 1, // Cobrir todo o espaço
-    backgroundColor: "white",
+    backgroundColor: "#F0EDE9",
     alignItems: "center", // Alinhar todos os items
     justifyContent: "center", // Justificar todo o conteudo
   },
 
   containerTwo: {
     flex: 1,
-    alignItems: "center",
+    borderWidth: 2,
+  },
+
+  fontes:{
+    fontFamily: "Prompt_400Regular",
   },
 
   textos: {
@@ -19,13 +23,14 @@ const Styles = StyleSheet.create({
     color: "#171A4A",
   },
   ImgLogo: {
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
   },
 
   firstButtons: {
     textAlign: "center",
     fontSize: 18,
+    fontFamily: "Prompt_400Regular",
   },
 
   frtButtons: {
@@ -89,6 +94,7 @@ const Styles = StyleSheet.create({
     width: "100%",
     height: "18%",
     backgroundColor: "#171A4A",
+    justifyContent: 'flex-end',
   },
   Rodape: {
     width: "100%",
@@ -96,13 +102,62 @@ const Styles = StyleSheet.create({
     backgroundColor: "#171A4A",
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  IconsRdp: {
+    width: 30,
+    height: 30,
+    margin: 18,
   },
   quadradocontainer: {
     marginTop: 20,
-    width: "80%",
+    width: "90%",
     height: "30%",
     backgroundColor: "#171A4A",
+    display: 'flex',
+    flexDirection: 'row'
   },
+
+  section:{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#F0EDE9",
+  },
+
+  formGroup: {
+    margin: 22,
+  },
+
+  formInput: {
+    padding: 10,
+    borderRadius: 5,
+    width: 300,
+    borderWidth: 2,
+    borderColor: "#2F2C79",
+    backgroundColor: "#2F2C7900",
+    color: "#2F2C79",
+    fontFamily: "Prompt_400Regular",
+  },
+
+  formLabel:{
+    position: "absolute",
+    backgroundColor: "#F0EDE9",
+    marginTop: -60,
+    marginLeft: 10,
+    paddingRight: 10,
+    paddingLeft: 10,
+    fontFamily: "Prompt_400Regular",
+  },
+  
+
+
+
+
+
+
 });
 
 export default Styles;

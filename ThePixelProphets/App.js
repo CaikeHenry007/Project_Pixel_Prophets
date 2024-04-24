@@ -1,7 +1,6 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Login from "./src/pages/Login"; // Importação da página Login
 
@@ -16,11 +15,9 @@ import {
 
 import Perfil from "./src/pages/Perfil"; // Importacao da Pagina Perfil
 
-import Splash from "./src/components/Splash";
+import Splash from "./src/pages/Splash";
 
 const Stack = createNativeStackNavigator();
-
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (

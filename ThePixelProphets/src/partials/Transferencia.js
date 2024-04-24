@@ -4,15 +4,15 @@ import { View, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
 
-import Btn from "../components/ButtonProps";
+import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
-import ImageProps from "../components/ImageProps";
-import Txt from "../components/TextProps";
-import InputProps from "../components/TextInputProps";
+import ImageProps from "../components/ImageComponent";
+import Txt from "../components/TextComponent";
+import InputProps from "../components/InputComponent";
 
 function TransferenciaConfirmacao({ visible, OnPress }) {
   const navigation = useNavigation();
-  
+
   const fontes = useFonts({
     Prompt_400Regular,
   });
@@ -54,7 +54,12 @@ function TransferenciaConfirmacao({ visible, OnPress }) {
   );
 }
 
-function TransferenciaConclusao({ visible, OnPress, ValorTransfe, NumeroConta }) {
+function TransferenciaConclusao({
+  visible,
+  OnPress,
+  ValorTransfe,
+  NumeroConta,
+}) {
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={visible}>

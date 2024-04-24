@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
 
-import Btn from "../components/ButtonProps";
+import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
 import LoginModal from "../partials/Login";
 import CadastroModal from "../partials/Cadastro";
@@ -23,7 +23,7 @@ export default function First() {
       <StatusBar />
       <ImageBackground
         source={require("../assets/images/Fundo1.png")}
-        style={{ width: "100%", height: "100%",  justifyContent: "flex-end", }}
+        style={{ width: "100%", height: "100%", justifyContent: "flex-end" }}
       >
         <View style={Styles.firstFooter}>
           <Btn
@@ -52,10 +52,7 @@ export default function First() {
           OnPress={() => navigation.navigate("Home")}
         />
 
-        <CadastroModal
-          visible={visibleB}
-          OnPress={() => setVisibleB(false)}
-        />
+        <CadastroModal visible={visibleB} OnPress={() => setVisibleB(false)} />
       </ImageBackground>
     </View>
   );

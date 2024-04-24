@@ -1,45 +1,44 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { View, ImageBackground, Modal } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import { useNavigation } from "@react-navigation/native";
 import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
 
-import Btn from "../components/ButtonProps";
+import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
-import ImageProps from "../components/ImageProps";
-import Txt from "../components/TextProps";
-import InputProps from "../components/TextInputProps";
+import ImageProps from "../components/ImageComponent";
+import Txt from "../components/TextComponent";
+import InputProps from "../components/InputComponent";
 
-export default function CadastroModal({visible, OnPress}) {
-
+export default function CadastroModal({ visible, OnPress }) {
   const fontes = useFonts({
     Prompt_400Regular,
   });
 
   return (
     <View>
-          <Modal animationType="slide" transparent={true} visible={visible} >
-      <View style={Styles.container}>
-      <ImageProps
-        source={require("../assets/images/LogoPB.png")}
-        style={Styles.ImgLogo}
-      />
-      <Txt Texto="Faça login" TextStyle={Styles.textos} />
-      <View style={Styles.caixas}>
-        <ImageProps
-          style={Styles.imagesicones}
-          source={require("../assets/images/People.jpg")}
-        />
-        <InputProps InputStyle={Styles.caixauser} Placeholder="Usuário" />
-      </View>
-      <View style={Styles.caixas}>
-        <ImageProps
-          style={Styles.imagesicones}
-          source={require("../assets/images/Cadeado.png")}
-        />
-        <InputProps InputStyle={Styles.caixasenha} Placeholder="Senha" />
-        <Btn
+      <Modal animationType="slide" transparent={true} visible={visible}>
+        <View style={Styles.container}>
+          <ImageProps
+            source={require("../assets/images/LogoPB.png")}
+            style={Styles.ImgLogo}
+          />
+          <Txt Texto="Faça login" TextStyle={Styles.textos} />
+          <View style={Styles.caixas}>
+            <ImageProps
+              style={Styles.imagesicones}
+              source={require("../assets/images/People.jpg")}
+            />
+            <InputProps InputStyle={Styles.caixauser} Placeholder="Usuário" />
+          </View>
+          <View style={Styles.caixas}>
+            <ImageProps
+              style={Styles.imagesicones}
+              source={require("../assets/images/Cadeado.png")}
+            />
+            <InputProps InputStyle={Styles.caixasenha} Placeholder="Senha" />
+            <Btn
               TouchStyle={[
                 Styles.frtButtons,
                 { backgroundColor: "#F5E2CF", marginRight: 10 },
@@ -48,10 +47,9 @@ export default function CadastroModal({visible, OnPress}) {
               children="Cadastrar"
               OnPress={OnPress}
             />
-      </View>
-    </View>
+          </View>
+        </View>
       </Modal>
     </View>
   );
 }
-

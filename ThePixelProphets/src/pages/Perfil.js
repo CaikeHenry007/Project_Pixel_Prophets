@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Button, Text, View, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-
 import Styles from "../styles/StyleSheet"; // Importacao do Styles
-import Txt from "../components/TextProps"; // Importacao do Component Text
-import ImageProps from "../components/ImageProps"; // Importacao do Componente Imagem
-import InputProps from "../components/TextInputProps"; // Importação do Componente Text Input
+import Txt from "../components/TextComponent"; // Importacao do Component Text
+import ImageProps from "../components/ImageComponent"; // Importacao do Componente Imagem
+import InputProps from "../components/InputComponent"; // Importação do Componente Text Input
 
 export default function Perfil() {
   return (
