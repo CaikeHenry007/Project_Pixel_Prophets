@@ -21,7 +21,7 @@ export default function CadastroModal({ visible, OnPress }) {
       <Modal animationType="slide" transparent={true} visible={visible}>
         <View style={Styles.container}>
           <ImageProps
-            source={require("../assets/images/LogoPB.png")}
+            source={require("../assets/images/LogoBlue.png")}
             style={Styles.ImgLogo}
           />
           <Txt Texto="Faça login" TextStyle={Styles.textos} />

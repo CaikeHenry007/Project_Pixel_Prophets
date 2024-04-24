@@ -64,7 +64,7 @@ export default function Transferencia() {
   return (
     <View style={Styles.container}>
       <ImageProps
-        source={require("../assets/images/LogoPB.png")}
+        source={require("../assets/images/LogoBlue.png")}
         style={Styles.ImgLogo}
       />
       <Txt Texto="Faça uma Transferência" TextStyle={Styles.textos} />

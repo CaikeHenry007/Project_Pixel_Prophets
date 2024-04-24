@@ -13,10 +13,6 @@ const Styles = StyleSheet.create({
     borderWidth: 2,
   },
 
-  fontes:{
-    fontFamily: "Prompt_400Regular",
-  },
-
   textos: {
     fontSize: 30,
     fontStyle: "italic",
@@ -115,7 +111,6 @@ const Styles = StyleSheet.create({
     height: "30%",
     backgroundColor: "#171A4A",
     display: 'flex',
-    flexDirection: 'row'
   },
 
   section:{
@@ -125,10 +120,6 @@ const Styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     backgroundColor: "#F0EDE9",
-  },
-
-  formGroup: {
-    margin: 22,
   },
 
   formInput: {

@@ -7,6 +7,7 @@ import {
   Modal,
   Flatlist,
   Image,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Styles from "../styles/StyleSheet";
@@ -31,8 +32,9 @@ export default function Home() {
           }}
         />
       </View>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: 'center' }}>
         <View style={Styles.quadradocontainer}>
+          <View style={{flexDirection: 'row',}} >
           <ImageProps
             source={require("../assets/images/saldo.png")}
             style={{ width: 30, height: 30, marginLeft: 15, marginTop: 10 }}
@@ -40,14 +42,18 @@ export default function Home() {
           <Text style={{ color: "white", marginLeft: 10, marginTop: 15 }}>
             Saldo Disponível:{" "}
           </Text>
-          <View style={{ alignItems: "flex-start", justifyContent: "center" }}>
-            <Text style={{ color: "white" }}>R$ 28.000.00</Text>
           </View>
+          <View
+            style={{
+              width: '98%',
+              marginTop: 30,
+              marginLeft:'2%',
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 30}}>R$ 28.000,00</Text>
         </View>
-        <Button
-          onPress={() => navigation.navigate("Transferencia")}
-          title="Fazer transferencia"
-        />
+          </View>
+
       </View>
       <RdpComponente />
     </View>

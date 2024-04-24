@@ -11,7 +11,7 @@ export default function Perfil() {
   return (
     <View style={Styles.container}>
       <ImageProps
-        source={require("../assets/images/LogoPB.png")}
+        source={require("../assets/images/LogoBlue.png")}
         style={Styles.ImgLogo}
       />
       <Txt Texto="Seu perfil" TextStyle={Styles.textos} />

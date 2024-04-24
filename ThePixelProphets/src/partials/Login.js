@@ -12,14 +12,15 @@ export default function LoginModal({ visible, OnPress }) {
   });
 
   return (
-    <View style={Styles.fontes}>
+    <View>
       <Modal animationType="slide" transparent={true} visible={visible}>
         <View style={Styles.section}>
           <ImageProps
-            source={require("../assets/images/LogoPB.png")}
+            source={require("../assets/images/LogoBlue.png")}
             style={Styles.ImgLogo}
           />
 
+          <View style={{margin: 40,}} >
           <View style={Styles.formGroup}>
             <TextInput style={Styles.formInput} Placeholder="CPF" />
             <View style={{ backgroundColor: "#F0EDE9" }}>
@@ -28,11 +29,12 @@ export default function LoginModal({ visible, OnPress }) {
             <InputProps />
           </View>
 
-          <View style={Styles.formGroup}>
+          <View>
             <TextInput style={Styles.formInput} Placeholder="SENHA" />
             <View style={{ backgroundColor: "#F0EDE9" }}>
               <Text style={Styles.formLabel}>SENHA</Text>
             </View>
+          </View>
           </View>
 
           <View style={Styles.formGroup}>
