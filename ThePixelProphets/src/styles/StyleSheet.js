@@ -3,9 +3,14 @@ import { StyleSheet } from "react-native";
 const Styles = StyleSheet.create({
   container: {
     flex: 1, // Cobrir todo o espaço
-    backgroundColor: "#F0EDE9",
+    backgroundColor: "white",
     alignItems: "center", // Alinhar todos os items
     justifyContent: "center", // Justificar todo o conteudo
+  },
+
+  containerTwo: {
+    flex: 1,
+    alignItems: "center",
   },
 
   textos: {
@@ -19,7 +24,6 @@ const Styles = StyleSheet.create({
   },
 
   firstButtons: {
-    fontFamily: "Prompt_400Regular",
     textAlign: "center",
     fontSize: 18,
   },
@@ -72,16 +76,32 @@ const Styles = StyleSheet.create({
     width: 25,
     height: 25,
   },
-
   firstFooter: {
     flexDirection: "row",
-    backgroundColor: "#171A4A",
+    position: "absolute",
     borderRadius: 15,
-    height: 130,
+    height: 135,
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: '100%'
+  },
+  Header: {
+    width: "100%",
+    height: "18%",
+    backgroundColor: "#171A4A",
+  },
+  Rodape: {
+    width: "100%",
+    height: "12%",
+    backgroundColor: "#171A4A",
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  quadradocontainer: {
+    marginTop: 20,
+    width: "80%",
+    height: "30%",
+    backgroundColor: "#171A4A",
   },
 });
 

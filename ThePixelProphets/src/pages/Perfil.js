@@ -15,9 +15,7 @@ export default function Perfil() {
         source={require("../assets/images/LogoPB.png")}
         style={Styles.ImgLogo}
       />
-      <Txt Texto="Faça login" TextStyle={Styles.textos} />
-      <InputProps InputStyle={Styles.caixauser} Placeholder="Usuário" />
-      <InputProps InputStyle={Styles.caixasenha} Placeholder="Senha" />
+      <Txt Texto="Seu perfil" TextStyle={Styles.textos} />
     </View>
   );
 }

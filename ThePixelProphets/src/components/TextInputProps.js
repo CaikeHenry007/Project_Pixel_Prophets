@@ -6,6 +6,7 @@ export default function InputProps({
   TypeTeclado,
   onChangeText,
   value,
+  secureTextEntry,
 }) {
   return (
     <TextInput
@@ -13,6 +14,7 @@ export default function InputProps({
       placeholder={Placeholder}
       keyboardType={TypeTeclado}
       onChangeText={onChangeText}
+      secureTextEntry={secureTextEntry}
       value={value}
     />
   );
