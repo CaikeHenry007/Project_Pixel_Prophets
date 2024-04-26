@@ -113,6 +113,7 @@ const Styles = StyleSheet.create({
     borderRadius: 10
   },
   quadradocontainer2: {
+  
     marginTop: 20,
     width: "35%",
     height: "15%",
@@ -154,8 +155,9 @@ const Styles = StyleSheet.create({
   formGroup: {
     marginBottom: 40,
   }
-
-
 });
 
-export default Styles;
+
+
+export default  Styles
+

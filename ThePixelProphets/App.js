@@ -8,6 +8,8 @@ import Home from "./src/pages/Home"; // Importacao da Pagina Home
 
 import Transferencia from "./src/pages/Transferencia"; // Importacao da Pagina Transferencia
 
+import Settings from './src/pages/Settings';
+
 import {
   TransferenciaConfirmacao,
   TransferenciaConclusao,
