@@ -26,7 +26,6 @@ const Styles = StyleSheet.create({
   firstButtons: {
     textAlign: "center",
     fontSize: 18,
-    fontFamily: "Prompt_400Regular",
   },
 
   frtButtons: {
@@ -107,16 +106,26 @@ const Styles = StyleSheet.create({
   },
   quadradocontainer: {
     marginTop: 20,
-    width: "90%",
+    width: "95%",
     height: "30%",
     backgroundColor: "#171A4A",
     display: 'flex',
+    borderRadius: 10
+  },
+  quadradocontainer2: {
+    marginTop: 20,
+    width: "35%",
+    height: "15%",
+    backgroundColor: "#000020",
+    display: 'flex',
+    borderRadius: 10,
+    alignItems: 'center',
+   justifyContent: 'center',
+    marginLeft: 15,
   },
 
   section:{
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     width: "100%",
     height: "100%",
     backgroundColor: "#F0EDE9",
@@ -130,7 +139,6 @@ const Styles = StyleSheet.create({
     borderColor: "#2F2C79",
     backgroundColor: "#2F2C7900",
     color: "#2F2C79",
-    fontFamily: "Prompt_400Regular",
   },
 
   formLabel:{
@@ -140,13 +148,12 @@ const Styles = StyleSheet.create({
     marginLeft: 10,
     paddingRight: 10,
     paddingLeft: 10,
-    fontFamily: "Prompt_400Regular",
+    color: "#2F2C79",
   },
   
-
-
-
-
+  formGroup: {
+    marginBottom: 40,
+  }
 
 
 });

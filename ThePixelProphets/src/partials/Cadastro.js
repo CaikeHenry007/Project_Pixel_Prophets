@@ -1,55 +1,86 @@
-import React, { useState, useEffect } from "react";
-import { View, ImageBackground, Modal } from "react-native";
-import { StatusBar } from "expo-status-bar";
-
-import { useNavigation } from "@react-navigation/native";
-import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
+import { View, Modal, TextInput, Text, Pressable } from "react-native";
 
 import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
 import ImageProps from "../components/ImageComponent";
-import Txt from "../components/TextComponent";
 import InputProps from "../components/InputComponent";
 
-export default function CadastroModal({ visible, OnPress }) {
-  const fontes = useFonts({
-    Prompt_400Regular,
-  });
-
+export default function LoginModal({ visibleB, OnPress, OnPressCloseB }) {;
   return (
     <View>
-      <Modal animationType="slide" transparent={true} visible={visible}>
-        <View style={Styles.container}>
-          <ImageProps
-            source={require("../assets/images/LogoBlue.png")}
-            style={Styles.ImgLogo}
-          />
-          <Txt Texto="Faça login" TextStyle={Styles.textos} />
-          <View style={Styles.caixas}>
-            <ImageProps
-              style={Styles.imagesicones}
-              source={require("../assets/images/People.jpg")}
-            />
-            <InputProps InputStyle={Styles.caixauser} Placeholder="Usuário" />
+      <Modal animationType="slide" transparent={true} visible={visibleB}>
+        <View style={Styles.section}>
+          <View>
+            <Pressable onPress={OnPressCloseB}>
+              <ImageProps
+                source={require("../assets/images/setinha.png")}
+                style={{ marginTop: 20 }}
+              />
+            </Pressable>
           </View>
-          <View style={Styles.caixas}>
+          <View style={{  justifyContent: "center", alignItems: "center", }}>
             <ImageProps
-              style={Styles.imagesicones}
-              source={require("../assets/images/Cadeado.png")}
+              source={require("../assets/images/LogoBlue.png")}
+              style={Styles.ImgLogo}
             />
-            <InputProps InputStyle={Styles.caixasenha} Placeholder="Senha" />
-            <Btn
-              TouchStyle={[
-                Styles.frtButtons,
-                { backgroundColor: "#F5E2CF", marginRight: 10 },
-              ]}
-              letras={[Styles.firstButtons, { color: "#2F2C79" }]}
-              children="Cadastrar"
-              OnPress={OnPress}
-            />
+
+            <View style={{ alignItems: "center", }} >
+              <View style={Styles.formGroup} >
+                <TextInput style={Styles.formInput} Placeholder="NOME COMPLETO" />
+                <View style={{ backgroundColor: "#F0EDE9" }}>
+                  <Text style={Styles.formLabel}>NOME COMPLETO</Text>
+                </View>
+              </View>
+          
+              <View style={Styles.formGroup}>
+                <TextInput style={Styles.formInput} Placeholder="CPF" />
+                <View style={{ backgroundColor: "#F0EDE9" }}>
+                  <Text style={Styles.formLabel}>CPF</Text>
+                </View>
+              </View>
+
+              <View style={Styles.formGroup} >
+                <TextInput style={Styles.formInput} Placeholder="E-MAIL" />
+                <View style={{ backgroundColor: "#F0EDE9" }}>
+                  <Text style={Styles.formLabel}>E-MAIL</Text>
+                </View>
+              </View>
+          
+              <View style={Styles.formGroup}>
+                <TextInput style={Styles.formInput} Placeholder="SENHA" />
+                <View style={{ backgroundColor: "#F0EDE9" }}>
+                  <Text style={Styles.formLabel}>SENHA</Text>
+                </View>
+              </View>
+
+              <View style={Styles.formGroup}>
+                <TextInput style={Styles.formInput} Placeholder="CONFIRMAR SENHA" />
+                <View style={{ backgroundColor: "#F0EDE9" }}>
+                  <Text style={Styles.formLabel}>CONFIRMAR SENHA</Text>
+                </View>
+              </View>
+
+              <View style={Styles.formGroup}>
+                <Btn
+                  TouchStyle={[
+                    Styles.frtButtons,
+                    { backgroundColor: "#2F2C79", marginRight: 10 },
+                  ]}
+                  letras={[
+                    Styles.firstButtons,
+                    { color: "#F0EDE9" },
+                  ]}
+                  children="Entrar"
+                  OnPress={OnPress}
+                />
+              </View>
+            </View>
           </View>
         </View>
       </Modal>
     </View>
   );
 }
+
+
+{/*  */}

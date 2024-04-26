@@ -2,7 +2,6 @@ import { View, ImageBackground } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
-import { useFonts, Prompt_400Regular } from "@expo-google-fonts/prompt";
 
 import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
@@ -13,10 +12,6 @@ export default function First() {
   const [visibleA, setVisibleA] = useState(false);
   const [visibleB, setVisibleB] = useState(false);
   const navigation = useNavigation();
-
-  const fontes = useFonts({
-    Prompt_400Regular,
-  });
 
   return (
     <View>
@@ -47,12 +42,9 @@ export default function First() {
           />
         </View>
 
-        <LoginModal
-          visible={visibleA}
-          OnPress={() => navigation.navigate("Home")}
-        />
+        <LoginModal visibleA={visibleA} OnPressCloseA={() => setVisibleA(false)} OnPress={() => {navigation.navigate("Home")}} />
 
-        <CadastroModal visible={visibleB} OnPress={() => setVisibleB(false)} />
+        <CadastroModal visibleB={visibleB} OnPressCloseB={() => setVisibleB(false)}  OnPress={() => {navigation.navigate("Home")}} />
       </ImageBackground>
     </View>
   );
