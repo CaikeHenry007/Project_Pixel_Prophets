@@ -1,7 +1,8 @@
-import { View, ImageBackground } from "react-native";
-import React, { useState } from "react";
+import { View, ImageBackground, Text } from "react-native";
+import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import { fetchData } from "../API/Api";
 
 import Btn from "../components/ButtonComponent";
 import Styles from "../styles/StyleSheet";
@@ -13,6 +14,32 @@ export default function First() {
   const [visibleB, setVisibleB] = useState(false);
   const navigation = useNavigation();
 
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null); // Adicione um estado para armazenar o erro
+
+  useEffect(() => {
+    // Chamando a função fetchData ao montar a tela
+    fetchData()
+      .then((responseData) => {
+        setData(responseData);
+      })
+      .catch((error) => {
+        setError(error); // Captura e armazena o erro no estado
+      });
+  }, []);
+
+  // Verifica se ocorreu um erro de solicitação
+  if (error) {
+    return (
+      <View style={Styles.errorContainer}>
+        <Text style={Styles.errorText}>
+          Ocorreu um erro ao carregar os dados da API.
+        </Text>
+        <Text style={Styles.errorText}>{error.message}</Text>
+      </View>
+    );
+  }
+
   return (
     <View>
       <StatusBar />
@@ -20,6 +47,7 @@ export default function First() {
         source={require("../assets/images/Fundo1.png")}
         style={{ width: "100%", height: "100%", justifyContent: "flex-end" }}
       >
+        <Text>Dados da API: {JSON.stringify(data)}</Text>
         <View style={Styles.firstFooter}>
           <Btn
             TouchStyle={[
