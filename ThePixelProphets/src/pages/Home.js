@@ -13,6 +13,7 @@ import Styles from "../styles/StyleSheet";
 import Txt from "../components/TextComponent";
 import ImageProps from "../components/ImageComponent";
 import RdpComponente from "../components/RodapeComponent";
+import HeaderShown from "../components/HeaderShown";
 
 export default function Home() {
   const navigation = useNavigation();
@@ -43,19 +44,7 @@ export default function Home() {
 
   return (
     <View style={{ flex: 1}}>
-      <View style={Styles.Header}>
-        <View><ImageProps source={require('../assets/images/settings.png')} style={{width: 30, height: 30, marginBottom: 25, marginLeft: 10}}/></View>
-        <Txt
-          Texto={"Olá, Fulano"}
-          TextStyle={{
-            color: "white",
-            fontSize: 30,
-            marginLeft: 10,
-            marginBottom: 10
-          }}
-        />
-      </View>
-        
+       {/* <HeaderShown/>*/}
       <View style={{ flex: 1, alignItems: "center" , flexDirection: 'column' }}> 
       
         <View style={Styles.quadradocontainer}>
@@ -97,12 +86,12 @@ export default function Home() {
         />
         <Text style={{color: '#000020', textAlign: 'center', fontSize: 20}}>Cartão</Text>
         <View style={{width: '95%', height: 5, backgroundColor: '#171A4A', marginBottom: 15 , borderRadius: 10, borderWidth: 1 }}></View>
-        <ImageProps source={require('../assets/images/cartaozica.png')} style={{width: '95%', height: '35%', borderRadius: 8}}/> 
+        <ImageProps source={require('../assets/images/cartaozica.png')} style={{width: '95%', height: '35%', borderRadius: 25}}/> 
       
       </View>
       
   
-      <RdpComponente />
+     {/*<RdpComponente />*/}
     </View>
   );
 }

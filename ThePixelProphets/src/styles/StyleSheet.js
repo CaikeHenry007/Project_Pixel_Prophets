@@ -14,9 +14,9 @@ const Styles = StyleSheet.create({
   },
 
   textos: {
-    fontSize: 30,
-    fontStyle: "italic",
-    color: "#171A4A",
+    fontSize: 17,
+    paddingBottom: 20,
+    color: "#2F2C79",
   },
   ImgLogo: {
     width: 200,

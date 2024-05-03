@@ -11,7 +11,7 @@ export default function RdpComponent() {
 
   return (
     <View style={Styles.Rodape}>
-      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>0
         <ImageProps
           style={Styles.IconsRdp}
           source={require("../assets/images/casahome.png")}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, View, Alert, Text } from "react-native";
+import { TextInput, Button, View, Alert, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import RdpComponente from "../components/RodapeComponent";
 import Txt from "../components/TextComponent";
@@ -61,29 +61,76 @@ export default function Transferencia() {
     navigation.navigate("Home");
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <View style={Styles.container}>
       <ImageProps
         source={require("../assets/images/LogoBlue.png")}
         style={Styles.ImgLogo}
       />
-      <Txt Texto="Faça uma Transferência" TextStyle={Styles.textos} />
-      <InputProps
-        InputStyle={Styles.caixauser}
-        Placeholder="Insira o nome da conta"
-        onChangeText={setNumCont}
-        TypeTeclado="numeric"
+
+      <View style={{ width: 300, }}>
+        <Txt Texto="Para quem você deseja fazer o transferência?" TextStyle={Styles.textos} />
+      </View>
+
+      <View style={Styles.formGroup} >
+        <TextInput style={Styles.formInput} Placeholder="CPF" />
+        <View style={{ backgroundColor: "#F0EDE9" }}>
+          <Text style={[Styles.formLabel, { fontSize: 11, }]}>CPF, CELULAR, E-MAIL OU CHAVE ALEATÓRIA</Text>
+        </View>
+      </View>
+
+      <Btn 
+        OnPress={() => setVisible(true)} 
+        TouchStyle={[
+          Styles.frtButtons,
+          { backgroundColor: "#2F2C79", marginRight: 10 },
+        ]}
+        letras={[
+          Styles.firstButtons,
+          { color: "#F0EDE9" },
+        ]} children="Continuar"
       />
-      <InputProps
-        InputStyle={Styles.caixasenha}
-        Placeholder="Insira o valor desejado"
-        onChangeText={setValTransfe}
-        TypeTeclado="numeric"
-      />
-      <Btn OnPress={() => setVisible(true)} TouchStyle={Styles.btn}>
-        <Txt Texto="Continuar para revisão" TextStyle={Styles.textobtn} />
-      </Btn>
-      <Button title="Sair" onPress={handleLogout} />
+                    
       <TransferenciaConclusao
         visible={visible}
         NumeroConta={NumConta}
