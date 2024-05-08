@@ -1,51 +1,73 @@
-import React from 'react';
+import React from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import RotasTabs from './BottomTabs.routes';
+import RotasTabs from "./BottomTabs.routes";
 
-import Login from '../pages/Login'; // Importação da página Login
+import Login from "../pages/Login"; // Importação da página Login
 
-import Settings from '../pages/Configuracoes';
+import Transferencia from "../pages/Transferencia"; // Importacao da Pagina Transferencia
 
-import Help from '../pages/Ajudaa';
+import Settings from '../pages/Settings';
 
-import Perfil from '../pages/Perfil'; // Importacao da Pagina Perfil
+import {
+  TransferenciaConfirmacao,
+  TransferenciaConclusao,
+} from "../partials/Transferencia";
 
-import CustomDrawer from '../components/CustomDrawer';
+import Perfil from "../pages/Perfil"; // Importacao da Pagina Perfil
+
+import Splash from "../pages/Splash";
 
 const Drawer = createDrawerNavigator();
 
 export default function RotasDrawer() {
   return (
       <Drawer.Navigator
-      drawerContent={CustomDrawer}
       screenOptions={{
-        drawerStyle: { backgroundColor: '#171A4A' },
-        drawerActiveBackgroundColor: '#F0EDE9',
-        drawerActiveTintColor: '#171A4A',
-        drawerInactiveBackgroundColor: '#171A4A',
-        drawerInactiveTintColor: '#F0EDE9',
+        drawerStyle: { backgroundColor: "white" },
+        drawerActiveBackgroundColor: "black",
+        drawerActiveTintColor: "white",
+
+        drawerInactiveBackgroundColor: "white",
+        drawerInactiveTintColor: "black",
       }}
       >
         <Drawer.Screen
-          name='Home'
+          name="Splash"
+          component={Splash}
+          options={{ headerShown: false, }}
+          
+        />
+        <Drawer.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
+          name="Home"
           component={RotasTabs}
-          options={{ headerTitle: 'Olá, Fulano', title: 'Home', headerStyle: { backgroundColor: "#171A4A"}, headerTintColor: "#F0EDE9",}}
+          options={{
+            title: 'Olá fulano'
+          }}
         />
         <Drawer.Screen
-          name='Perfil'
+          name="Transferencia"
+          component={Transferencia}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
+          name="TransferenciaConfirmacao"
+          component={TransferenciaConfirmacao}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
+          name="TransferenciaConclusao"
+          component={TransferenciaConclusao}
+          options={{ headerShown: false, drawerContent: () => null }}
+        />
+        <Drawer.Screen
+          name="Perfil"
           component={Perfil}
-          options={{ title: 'Perfil', headerStyle: { backgroundColor: "#171A4A"}, headerTintColor: "#F0EDE9",}}
-        />
-        <Drawer.Screen
-          name='Configurações'
-          component={Settings}
-          options={{ title: 'Configurções', headerStyle: { backgroundColor: "#171A4A"}, headerTintColor: "#F0EDE9",}}
-        />
-        <Drawer.Screen
-          name='Ajuda'
-          component={Help}
-          options={{ title: 'Ajuda', headerStyle: { backgroundColor: "#171A4A"}, headerTintColor: "#F0EDE9",}}
         />
       </Drawer.Navigator>
   );

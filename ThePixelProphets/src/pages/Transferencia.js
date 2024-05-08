@@ -5,6 +5,7 @@ import RdpComponente from "../components/RodapeComponent";
 import Txt from "../components/TextComponent";
 import Btn from "../components/ButtonComponent";
 import ImageProps from "../components/ImageComponent";
+import InputProps from "../components/InputComponent";
 import { TransferenciaConclusao } from "../partials/Transferencia";
 
 import Styles from "../styles/StyleSheet";
@@ -60,17 +61,45 @@ export default function Transferencia() {
     navigation.navigate("Home");
   }
 
-  const TransfFinalizada = () => {
-    return Alert.alert(
-      "Transferência finalizada",
-      [
-        {
-          text: "OK",
-          onPress: () => navigation.navigate("Home"),
-        },
-      ]
-    );
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <View style={Styles.container}>
@@ -88,10 +117,6 @@ export default function Transferencia() {
         <View style={{ backgroundColor: "#F0EDE9" }}>
           <Text style={[Styles.formLabel, { fontSize: 11, }]}>CPF, CELULAR, E-MAIL OU CHAVE ALEATÓRIA</Text>
         </View>
-        <ImageProps
-          source={require("../assets/images/QRCode.png")}
-          style={{ width: 300, height: 118, borderRadius: 10, marginTop: 50, }}
-        />
       </View>
 
       <Btn 
@@ -110,8 +135,8 @@ export default function Transferencia() {
         visible={visible}
         NumeroConta={NumConta}
         ValorTransfe={ValTransfe}
-        OnPress={() => TransfFinalizada()}
-        />
+        OnPress={() => navigation.navigate("Home")}
+      />
     </View>
   );
 }

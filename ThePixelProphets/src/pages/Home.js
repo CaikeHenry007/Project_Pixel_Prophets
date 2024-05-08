@@ -85,10 +85,9 @@ export default function Home() {
           )}
         />
         <Text style={{color: '#000020', textAlign: 'center', fontSize: 20}}>Cartão</Text>
-        
-        <View style={{width: '96%', height: "0.5%", backgroundColor: '#171A4A', marginBottom: "4%" , borderRadius: 10, marginTop: "2%" }}></View>
-        
-        <ImageProps source={require('../assets/images/cartaozica.png')} style={{width: '98%', height: '32%', borderRadius: 18, marginBottom: "7%",}}/> 
+        <View style={{width: '95%', height: 5, backgroundColor: '#171A4A', marginBottom: 15 , borderRadius: 10, borderWidth: 1 }}></View>
+        <ImageProps source={require('../assets/images/cartaozica.png')} style={{width: '95%', height: '35%', borderRadius: 25}}/> 
+      
       </View>
       
   

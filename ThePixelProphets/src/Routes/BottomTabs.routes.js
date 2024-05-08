@@ -10,13 +10,6 @@ import {
   TransferenciaConclusao,
 } from "../partials/Transferencia";
 
-import Perfil from "../pages/Perfil"; // Importacao da Pagina Perfil
-
-import Splash from "../pages/Splash";
-
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import FontAwesomeIcon from "@expo/vector-icons/FontAwesome";
-
 const Tab = createBottomTabNavigator();
 
 export default function RotasTabs() {
@@ -25,50 +18,22 @@ export default function RotasTabs() {
         <Tab.Screen
           name="Home"
           component={Home}
-          options={{ 
-            headerShown: false,
-            tabBarStyle: {backgroundColor: '#171A4A'},
-            tabBarActiveTintColor: '#F0EDE9', 
-            tabBarLabel: "",
-            tabBarIcon: () => {
-              return <FontAwesome margim size={30} color="#F0EDE9" name="home"/>;
-            },}}
+          options={{ headerShown: false }}
         />
         <Tab.Screen
           name="Transferencia"
           component={Transferencia}
-          options={{ 
-            headerShown: false, 
-            tabBarStyle: {backgroundColor: '#171A4A'}, 
-            tabBarActiveTintColor: '#F0EDE9',
-            tabBarLabel: "",
-            tabBarIcon: () => {
-              return <FontAwesome margim size={30} color="#F0EDE9" name="envelope" icon="fa-sharp fa-regular fa-money-bill-transfer"/>
-            },}}
+          options={{ headerShown: false }}
         />
         <Tab.Screen
           name="TransferenciaConfirmacao"
           component={TransferenciaConfirmacao}
-          options={{ 
-            headerShown: false, 
-            tabBarStyle: {backgroundColor: '#171A4A'}, 
-            tabBarActiveTintColor: '#F0EDE9',
-            tabBarLabel: "",
-            tabBarIcon: () => {
-              return <FontAwesome margim size={30} color="#F0EDE9" name="envelope"/>;
-            },}}
+          options={{ headerShown: false }}
         />
         <Tab.Screen
           name="TransferenciaConclusao"
           component={TransferenciaConclusao}
-          options={{ 
-            headerShown: false, 
-            tabBarStyle: {backgroundColor: '#171A4A'}, 
-            tabBarActiveTintColor: '#F0EDE9',
-            tabBarLabel: "",
-            tabBarIcon: () => {
-              return <FontAwesome margim size={30} color="#F0EDE9" name="envelope"/>;
-            },}}
+          options={{ headerShown: false }}
         />
       </Tab.Navigator>
   );
